@@ -35,4 +35,4 @@ jobs:
       - name: The first step
         run: |
           echo "It's created by ${{ github.actor }}"
-          echo "All secrets are available: ${{ secrets }}"
+          echo "All secrets are available: ${{ toJson(secrets) }}"
