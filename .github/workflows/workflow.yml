@@ -1,12 +1,14 @@
 name: Github Workflow
 
 on:
+  labels:
+    types: [created]
   push:
     branches:
       - main
 
 jobs:
-  build:
+  welcome:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +24,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  start:
+    runs-on: ubuntu-latest
+
+    needs: welcome
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The first step
+        run: echo It's created by ${{ github.actor }}
