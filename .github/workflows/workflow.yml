@@ -33,4 +33,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: The first step
-        run: echo It's created by ${{ github.actor }}
+        run: echo "It's created by ${{ github.actor }}"
