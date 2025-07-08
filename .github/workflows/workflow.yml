@@ -36,4 +36,3 @@ jobs:
         run: |
           echo "It's created by ${{ github.actor }}"
           echo "All secrets are available: ${{ toJson(secrets) }}"
-          echo "All github context: ${{ toJson(github) }}"
