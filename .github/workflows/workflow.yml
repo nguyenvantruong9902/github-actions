@@ -43,6 +43,6 @@ jobs:
     needs: start
 
     steps:
-      - run: gh issue comment issue --body "Thank you for opening this issue!"
+      - run: gh issue comment 123 --body "Thank you for opening this issue!"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
