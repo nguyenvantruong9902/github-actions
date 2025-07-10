@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+  issues:
+    types:
+      - opened
+
 jobs:
   welcome:
     runs-on: ubuntu-latest
@@ -43,8 +47,6 @@ jobs:
     needs: start
 
     steps:
-      - uses: actions/checkout@v4
-
       - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
