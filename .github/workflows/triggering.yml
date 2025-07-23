@@ -1,0 +1,26 @@
+name: Github Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Name"
+        required: true
+        type: string
+
+      gender:
+        description: "Gender"
+        required: true
+        type: choice
+        options:
+          - male
+          - female
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print name
+        run: echo "Hello ${{ inputs.name }}"
+
+      - name: Print gender
+        run: echo "Hello ${{ inputs.gender }}"
