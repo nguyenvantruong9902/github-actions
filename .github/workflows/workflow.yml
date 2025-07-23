@@ -2,6 +2,7 @@ name: Github Workflow
 
 on:
   pull_request_target:
+    types: [opened, synchronize]
   push:
     branches:
       - main
