@@ -1,7 +1,7 @@
 name: Github Trigger
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       name:
         description: "Name"
