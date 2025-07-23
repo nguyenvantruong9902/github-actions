@@ -39,6 +39,7 @@ jobs:
           echo "All secrets are available: ${{ toJson(secrets) }}"
 
   comment:
+    if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
 
     permissions:
