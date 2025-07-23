@@ -52,5 +52,5 @@ jobs:
       - name: Add comment to PR
         env:
           PR: ${{ github.event.pull_request.number }}
-          run: |
-            gh pr comment $PR --body "This is a comment"
+        run: |
+          gh pr comment $PR --body "This is a comment"
