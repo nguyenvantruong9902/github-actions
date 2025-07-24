@@ -31,6 +31,9 @@ jobs:
     needs: welcome
     if: github.event_name == 'pull_request' # Optional: restrict to PRs
 
+    outputs:
+      message: ${{ vars.MESSAGE }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -46,16 +49,15 @@ jobs:
     if: github.event_name == 'pull_request'
 
     permissions:
-      issues: write
       pull-requests: write
 
     steps:
       - name: Add comment to PR
         id: add-comment
-        if: ${{ vars.MESSAGE != '' }}
+        if: ${{ needs.start.outputs.message }}
         uses: peter-evans/create-or-update-comment@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ${{ vars.MESSAGE }}
+            ${{ needs.start.outputs.message }}
