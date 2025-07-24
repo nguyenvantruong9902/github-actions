@@ -2,7 +2,6 @@ name: Github Workflow
 
 on:
   pull_request:
-    types: [opened, synchronize]
   push:
     branches:
       - main
@@ -30,7 +29,7 @@ jobs:
   start:
     runs-on: ubuntu-latest
     needs: welcome
-    if: github.event_name == 'pull_request_target' # Optional: restrict to PRs
+    if: github.event_name == 'pull_request' # Optional: restrict to PRs
 
     steps:
       - uses: actions/checkout@v4
@@ -44,7 +43,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     needs: start
-    if: github.event_name == 'pull_request_target'
+    if: github.event_name == 'pull_request'
 
     permissions:
       issues: write
