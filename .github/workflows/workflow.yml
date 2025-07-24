@@ -54,7 +54,7 @@ jobs:
     steps:
       - name: Add comment to PR
         id: add-comment
-        if: needs.start.outputs.message
+        if: ${{ needs.start.outputs.message }}
         uses: peter-evans/create-or-update-comment@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
