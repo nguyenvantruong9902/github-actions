@@ -2,11 +2,13 @@ name: Github Workflow
 
 on:
   pull_request:
+  label:
+    types:
+      - created
+      - deleted
   push:
     branches:
       - main
-    tags:
-      - v*
 
 jobs:
   welcome:
