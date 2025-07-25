@@ -2,7 +2,7 @@ name: Github Workflow
 
 on:
   pull_request:
-  labels:
+  label:
     type: [created, edited, deleted]
   push:
     branches:
