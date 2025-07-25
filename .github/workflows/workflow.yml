@@ -11,6 +11,10 @@ on:
       - main
   schedule:
     - cron: "5 * * * *"
+  workflow_run:
+    workflows: ["Github Trigger"]
+    types:
+      - completed
 
 jobs:
   welcome:
