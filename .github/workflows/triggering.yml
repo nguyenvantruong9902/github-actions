@@ -21,12 +21,4 @@ on:
           - female
 jobs:
   print:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print name
-        id: print-name
-        run: echo "Hello ${{ inputs.name }}"
-
-      - name: Print gender
-        id: print-gender
-        run: echo "Hello ${{ inputs.gender }}"
+    uses: ./.github/workflows/reuseable.yml

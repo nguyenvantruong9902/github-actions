@@ -1,0 +1,24 @@
+name: Reuseable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: "Name"
+        required: true
+        type: string
+    secrets: inherit
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print name
+        id: print-name
+        run: |
+          echo "Hello ${{ inputs.name }}"
+
+      - name: Print secret
+        id: print-secret
+        run: |
+          echo "Secret: ${{ toJSON(secrets) }}"
