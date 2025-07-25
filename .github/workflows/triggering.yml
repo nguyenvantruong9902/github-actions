@@ -22,5 +22,6 @@ on:
 jobs:
   print:
     uses: ./.github/workflows/reusable.yml
+    secrets: inherit
     with:
       name: ${{ inputs.name }}
