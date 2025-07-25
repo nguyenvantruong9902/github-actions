@@ -22,3 +22,5 @@ on:
 jobs:
   print:
     uses: ./.github/workflows/reusable.yml
+    with:
+      name: ${{ inputs.name }}
