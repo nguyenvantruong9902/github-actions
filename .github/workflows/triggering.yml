@@ -21,4 +21,4 @@ on:
           - female
 jobs:
   print:
-    uses: ./.github/workflows/reuseable.yml
+    uses: ./.github/workflows/reusable.yml
