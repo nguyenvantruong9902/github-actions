@@ -11,12 +11,12 @@ on:
 jobs:
   print-name:
     runs-on: ubuntu-latest
-    continue-on-error: true
+    needs: print
     steps:
       - name: Print name
-        id: print
+        id: print-name
         run: |
-          echo "Name: ${{ inputs.nema }}"
+          echo "Name: ${{ inputs.name }}"
 
   print-secret:
     runs-on: ubuntu-latest
