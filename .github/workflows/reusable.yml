@@ -12,7 +12,7 @@ jobs:
   print-name:
     name: Print name
     runs-on: ubuntu-latest
-    continues-on-error: true
+    continue-on-error: true
 
     steps:
       - name: Print name
