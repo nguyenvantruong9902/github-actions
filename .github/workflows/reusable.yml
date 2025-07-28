@@ -18,7 +18,6 @@ jobs:
         id: print-name
         run: |
           echo "Name: ${{ inputs.name }}"
-          npm install
 
   print-secret:
     name: Print secret
