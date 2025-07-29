@@ -24,7 +24,10 @@ jobs:
       - name: Add README.md
         id: add-readme
         run: |
-          echo "Name: ${{ inputs.name }}" >> README.md
+          cat <<EOF > README.md
+          # README.md
+          Name: ${{ inputs.name }}
+          EOF
 
       - name: Configure Git
         id: configure-git
