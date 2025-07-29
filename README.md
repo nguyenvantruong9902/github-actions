@@ -1,3 +1,2 @@
-Name: Truong Nguyen\
-Name: Truong Nguyen\
-Name: Truong
+# README.md
+Name: Truong Nguyen
