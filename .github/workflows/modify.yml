@@ -1,0 +1,44 @@
+name: Modify Workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: "Name"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  modify-readme:
+    name: Modify README.md
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Add README.md
+        id: add-readme
+        run: |
+          echo "Name: ${{ inputs.name }}" >> README.md
+
+      - name: Configure Git
+        id: configure-git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit README.md
+        id: commit
+        run: |
+          git add README.md
+          git commit -m "Update README.md"
+
+      - name: Push changes
+        id: push
+        run: |
+          git push
