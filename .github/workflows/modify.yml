@@ -1,7 +1,7 @@
 name: Modify Workflow
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       name:
         description: "Name"
