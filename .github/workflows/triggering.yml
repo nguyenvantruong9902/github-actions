@@ -27,3 +27,8 @@ jobs:
     secrets: inherit
     with:
       name: ${{ inputs.name }}
+
+  composite:
+    uses: nguyenvantruong9902/composite-actions@main
+    with:
+      name: ${{ inputs.name }}
