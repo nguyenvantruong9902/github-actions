@@ -23,7 +23,7 @@ on:
           - female
 jobs:
   print:
-    uses: ./.github/workflows/reusable.yml
+    uses: ./
     secrets: inherit
     with:
       name: ${{ inputs.name }}

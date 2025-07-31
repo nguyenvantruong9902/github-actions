@@ -1,0 +1,21 @@
+name: Action Workflow
+run-name: ${{ inputs.name }} trigger workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: "Name"
+        required: true
+        type: string
+
+jobs:
+  print-name:
+    name: Print name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print name
+        id: print-name
+        run: |
+          echo "Name: ${{ inputs.name }}"
