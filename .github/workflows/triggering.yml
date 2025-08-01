@@ -30,7 +30,23 @@ jobs:
 
   composite:
     runs-on: ubuntu-latest
+    needs: print
     steps:
       - uses: nguyenvantruong9902/composite-actions@v2
         with:
           name: ${{ inputs.name }}
+
+  upload-artifact:
+    runs-on: ubuntu-latest
+    needs: composite
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Upload artifact
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.name }}
+          path: README.md
