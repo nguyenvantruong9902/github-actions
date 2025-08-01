@@ -31,6 +31,6 @@ jobs:
   composite:
     runs-on: ubuntu-latest
     steps:
-      uses: nguyenvantruong9902/composite-actions@v2
-      with:
-        name: ${{ inputs.name }}
+      - uses: nguyenvantruong9902/composite-actions@v2
+        with:
+          name: ${{ inputs.name }}
