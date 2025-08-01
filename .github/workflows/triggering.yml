@@ -29,6 +29,6 @@ jobs:
       name: ${{ inputs.name }}
 
   composite:
-    uses: nguyenvantruong9902/composite-actions@v1
+    uses: nguyenvantruong9902/composite-actions@v2
     with:
       name: ${{ inputs.name }}
